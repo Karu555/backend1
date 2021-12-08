@@ -49,15 +49,16 @@
 
 
 const express = require('express');
+const users = require("./users.json")
 const app = express();
 
-app.get('/', (req, res) => {
-    res.send("Welcome to Home page");
-})
-
-// app.get('/user', (req, res) => {
-//     res.send("C:\Users\Karunesh Ranjan\Downloads\user.csv");
+// app.get('/', (req, res) => {
+//     res.send("Welcome to Home ");
 // })
+
+app.get('/', (req, res) => {
+    res.send({users});
+})
 
 app.listen(8000, () => {
     console.log("Listening on port 8000");
